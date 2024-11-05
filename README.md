@@ -1,5 +1,7 @@
 # passwordpusher_docker_synology
 
+This project helps You installing https://pwpush.com/ solution on a Synology NAS though Container Manager
+
 Create /volume1/docker/passwordpusher
 
 Create /volume1/docker/passwordpusher/db
