@@ -18,7 +18,7 @@ done
 
 
 
-use your prefered gateway to get https
+use your prefered gateway to get https acces (ClouFlare....)
 
 otherwise use reverse proxy on your nas
 
