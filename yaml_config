@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: PasswordPusher-DB
+    hostname: passwordpusher-db
+    mem_limit: 512m
+    cpu_shares: 768
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "passpusher", "-U", "passpusheruser"]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    volumes:
+      - /volume1/docker/passwordpusher/db:/var/lib/postgresql/data:rw
+    environment:
+      POSTGRES_DB: passpusher
+      POSTGRES_USER: passpusheruser
+      POSTGRES_PASSWORD: passpusherpass
+    restart: on-failure:5
+
+  passpusher:
+    image: pglombardo/pwpush
+    container_name: PasswordPusher
+    hostname: passwordpusher
+    mem_limit: 1g
+    cpu_shares: 768
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/5100' || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    ports:
+      - 5100:5100
+    environment:
+      DATABASE_URL: postgresql://passpusheruser:passpusherpass@passwordpusher-db:5432/passpusher
+      #PWP__THEME: flatly #or https://docs.pwpush.com/docs/themes/
+      #PWP_PRECOMPILE: true #mandatory if you use theme.
+    restart: on-failure:5
+    depends_on:
+      db:
+        condition: service_started
