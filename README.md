@@ -22,3 +22,4 @@ use your prefered gateway to get https
 
 otherwise use reverse proxy on your nas
 
+Based on: https://mariushosting.com/how-to-install-password-pusher-on-your-synology-nas/
