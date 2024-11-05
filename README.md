@@ -8,11 +8,13 @@ create a project into container manager
 
 use yaml_config as yaml file
 
+fill free to change passwords and usernames for more security
+
 create
 
 done
 
-fill free to change passwords and usernames
+
 
 use your prefered gateway to get https
 
