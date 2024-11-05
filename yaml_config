@@ -39,8 +39,6 @@ services:
       - 5100:5100
     environment:
       DATABASE_URL: postgresql://passpusheruser:passpusherpass@passwordpusher-db:5432/passpusher
-      #PWP__THEME: flatly #or https://docs.pwpush.com/docs/themes/
-      #PWP_PRECOMPILE: true #mandatory if you use theme.
     restart: on-failure:5
     depends_on:
       db:
