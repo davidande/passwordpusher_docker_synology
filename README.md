@@ -1,4 +1,4 @@
-# passwordpusher_docker_synology
+# PasswordPusher_Docker_Synology
 
 This project helps You installing https://pwpush.com/ solution on a Synology NAS though Container Manager
 
