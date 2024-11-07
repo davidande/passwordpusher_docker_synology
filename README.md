@@ -20,9 +20,12 @@ fill free to change passwords and usernames for more security
 
 create
 
+Configure the reverse proxy on Your NAS matching PWP__HOST_DOMAIN (this is usefull only if You need to use PasswordPusher from Your LAN and the WAN
+
 done
 
 For more customization https://docs.pwpush.com/docs/self-hosted-configuration/
+
 
 
 use your prefered gateway to get https acces (CloudFlare....)
