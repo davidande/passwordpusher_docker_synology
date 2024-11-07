@@ -3,6 +3,8 @@
 This project helps You installing https://pwpush.com/ solution on a Synology NAS though Container Manager
 
 This configuration includes all Community fonctionnalities: Password, Files, urls, Admin dashboard
+![image](https://github.com/user-attachments/assets/6326daf6-29d7-4eda-b2a3-8cd4b57d5ae6)
+
 
 Create /volume1/docker/passwordpusher
 
