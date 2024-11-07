@@ -35,10 +35,44 @@ services:
       timeout: 5s
       retries: 3
       start_period: 90s
+    volumes:
+      - /volume1/docker/passwordpusher/storage:/opt/PasswordPusher/storage:rw
     ports:
       - 5100:5100
     environment:
       DATABASE_URL: postgresql://passpusheruser:passpusherpass@passwordpusher-db:5432/passpusher
+    # PWP__THEME: flatly #or https://docs.pwpush.com/docs/themes/
+    # PWP_PRECOMPILE: true #mandatory if you use theme.
+      PWP__ENABLE_LOGINS: true
+      PWP__ALLOW_ANONYMOUS: true
+      PWP__DISABLE_SIGNUPS: fasle
+      PWP__MAIL__RAISE_DELIVERY_ERRORS: true
+      PWP__MAIL__SMTP_ADDRESS: YOUR SMTP SERVER
+      PWP__MAIL__SMTP_PORT: YOUR SMTP PORT SERVER
+      PWP__MAIL__SMTP_USER_NAME: SMTP USERNAME
+      PWP__MAIL__SMTP_PASSWORD: SMTP USER PASSWORD
+      PWP__MAIL__SMTP_AUTHENTICATION: login
+      PWP__MAIL__SMTP_STARTTLS: true
+      PWP__MAIL__SMTP_ENABLE_STARTTLS_AUTO: true
+      PWP__MAIL__SMTP_OPEN_TIMEOUT: 10
+      PWP__MAIL__SMTP_READ_TIMEOUT: 10
+      PWP__HOST_DOMAIN: YOUR EXTERNAL DOMAIN
+      PWP__HOST_PROTOCOL: https
+      PWP__MAIL__MAILER_SENDER: '"SENDER NAME" <SENDER@MAIL.COM>'
+      PWP__ENABLE_FILE_PUSHES: true
+      PWP__FILES__STORAGE: local
+        # PWP__FILES__S3__ENDPOINT=
+        # PWP__FILES__S3__ACCESS_KEY_ID=
+        # PWP__FILES__S3__SECRET_ACCESS_KEY=
+        # PWP__FILES__S3__REGION=
+        # PWP__FILES__S3__BUCKET=
+        # PWP__FILES__EXPIRE_AFTER_DAYS_DEFAULT=2
+        # PWP__FILES__EXPIRE_AFTER_DAYS_MAX=7
+        # PWP__FILES__EXPIRE_AFTER_VIEWS_DEFAULT=5
+        # PWP__FILES__EXPIRE_AFTER_VIEWS_MAX=10
+        # PWP__FILES__RETRIEVAL_STEP_DEFAULT=true
+      PWP__ENABLE_URL_PUSHES: true
+      PWP__LOG_LEVEL: debug
     restart: on-failure:5
     depends_on:
       db:
