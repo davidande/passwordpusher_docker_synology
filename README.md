@@ -6,6 +6,8 @@ Create /volume1/docker/passwordpusher
 
 Create /volume1/docker/passwordpusher/db
 
+Create /volume1/docker/passwordpusher/storage
+
 create a project into container manager
 
 use yaml_config as yaml file
@@ -16,6 +18,7 @@ create
 
 done
 
+For more customization https://docs.pwpush.com/docs/self-hosted-configuration/
 
 
 use your prefered gateway to get https acces (CloudFlare....)
