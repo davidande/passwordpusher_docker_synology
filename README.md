@@ -18,9 +18,21 @@ use yaml_config as yaml file
 
 fill free to change passwords and usernames for more security
 
-create
+create and wait it to comes up
 
-Configure the reverse proxy on Your NAS matching PWP__HOST_DOMAIN (this is usefull only if You need to use PasswordPusher from Your LAN and the WAN
+You can now access PasswordPusher on your http://NAS_IP:5100
+
+For HTTPS: stop the project
+
+Configure the reverse proxy on Your NAS
+
+Map your external domain https to Your NAS IP port 5100
+
+Map you extenal domain 80 to your external domain 443  (this avoid http connexion
+
+configure PWP__HOST_DOMAIN (this is usefull only if You need to use PasswordPusher from Your LAN and the WAN
+
+restart the project
 
 done
 
