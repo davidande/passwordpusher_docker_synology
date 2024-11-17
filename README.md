@@ -10,7 +10,7 @@ Create /volume1/docker/passwordpusher
 
 Create /volume1/docker/passwordpusher/db
 
-Create /volume1/docker/passwordpusher/storage
+Create /volume1/docker/passwordpusher/storage and add Read and Write persossion for SYSTEM on this folder and subs
 
 create a project into container manager
 
